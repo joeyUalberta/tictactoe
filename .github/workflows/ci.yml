@@ -9,12 +9,18 @@ jobs:
     run-pitest:
         runs-on: ubuntu-latest
         steps:
+            # Use master branch
+            - uses: actions/checkout@v1
+
+            # Install maven and openjdk 8
             - name: Install maven
               uses: xlui/action-maven-cli@v1.0
 
+            # Install all dependencies including pitest
             - name: Install dependencies
               run: mvn clean install
 
+            # Run mutation testing using pitest
             - name: Run pitest
               run: mvn org.pitest:pitest-maven:mutationCoverage
 

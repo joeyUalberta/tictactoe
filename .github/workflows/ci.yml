@@ -9,7 +9,7 @@ jobs:
         run-pitest:
                 runs-on: ubuntu-latest
                 steps:
-                        - uses: actions/checkout@v1
+                        - uses: action/checkout@v1
 
                         - name: Install maven
                           uses: xlui/action-maven-cli@v1.0
